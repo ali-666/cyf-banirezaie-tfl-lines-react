@@ -13,18 +13,15 @@ const Destination = (props) => {
     }
   }, [props.selectLine]);
 
-  // toDestinationName.routeSections[0].destinationName
-  // toDestinationName.routeSections[0].originationName
-
   return (
     <div>
       {toDestinationName.routeSections ? (
-        <div>
-          <div>
+        <div className="destinationBody">
+          <div className="eachDestination">
             Start of line:
             <h5>{toDestinationName.routeSections[0].originationName}</h5>
           </div>
-          <div>
+          <div className="eachDestination">
             End of line:
             <h5>{toDestinationName.routeSections[0].destinationName}</h5>
           </div>{" "}

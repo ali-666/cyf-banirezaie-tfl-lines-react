@@ -14,8 +14,20 @@ body {
 }
 
 .select {
-  padding: 1em 8em;
+  padding: 1em;
+  width: 35em;
   font-weight: bold;
   cursor: pointer;
   background-color: rgb(17, 202, 202);
+}
+.destinationBody {
+  display: flex;
+  justify-content: space-around;
+}
+.eachDestination {
+  background: rgb(17, 202, 202);
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 30px 100px;
 }
