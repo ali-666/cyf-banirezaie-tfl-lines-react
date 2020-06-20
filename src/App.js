@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SelectBar from "./SelectMode";
+import "./App.css";
+import SelectLine from "./SelectLine";
+import Destination from "./Destination";
 
 function App() {
+  //select tube, bus, overground and ect
+  const [selectedOption, setSelectedOption] = useState(null);
+  //select line
+  const [selectLine, setSelectLine] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <h1> Transport For London </h1>
+      <SelectBar
+        api="https://api.tfl.gov.uk/Line/Meta/Modes"
+        method="Transport by"
+        transport="trasportation mode"
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+      />
+      {/* <SelectBar
+        method="Line"
+        api="https://api.tfl.gov.uk/Line/Mode/tube"
+        transport="Line"
+      /> */}
+      <SelectLine
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+        selectLine={selectLine}
+        setSelectLine={setSelectLine}
+      />
+      <Destination selectLine={selectLine} setSelectLine={setSelectLine} />
     </div>
   );
 }
