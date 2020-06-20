@@ -9,7 +9,7 @@ const SelectBar = (props) => {
       .then((data) => {
         setTransportMode(data);
       });
-  }, []);
+  }, [props.api]);
 
   function changingValue(e) {
     props.setSelectedOption(e.target.value);
