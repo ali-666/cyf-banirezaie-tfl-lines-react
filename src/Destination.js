@@ -11,7 +11,7 @@ const Destination = (props) => {
           setToDestinationName(data);
         });
     }
-  }, [props.selectLine, toDestinationName]);
+  }, [props.selectLine]);
 
   // toDestinationName.routeSections[0].destinationName
   // toDestinationName.routeSections[0].originationName
